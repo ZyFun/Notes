@@ -8,22 +8,32 @@
 
 /* Begin PBXBuildFile section */
 		2CAD3D00295380030062660B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3CFF295380030062660B /* AppDelegate.swift */; };
-		2CAD3D04295380030062660B /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D03295380030062660B /* ViewController.swift */; };
-		2CAD3D07295380030062660B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD3D05295380030062660B /* Main.storyboard */; };
 		2CAD3D0A295380030062660B /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D08295380030062660B /* Notes.xcdatamodeld */; };
 		2CAD3D0C295380040062660B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD3D0B295380040062660B /* Assets.xcassets */; };
 		2CAD3D0F295380040062660B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD3D0D295380040062660B /* LaunchScreen.storyboard */; };
+		2CAD3D212953854A0062660B /* NoteListPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D202953854A0062660B /* NoteListPresenter.swift */; };
+		2CAD3D23295385630062660B /* NoteListInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D22295385630062660B /* NoteListInteractor.swift */; };
+		2CAD3D25295385780062660B /* NoteListRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D24295385780062660B /* NoteListRouter.swift */; };
+		2CAD3D28295385EA0062660B /* NoteListConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D27295385EA0062660B /* NoteListConfigurator.swift */; };
+		2CAD64ED295386BF00F70D72 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */; };
+		2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */; };
+		2CAD64F029538BD500F70D72 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		2CAD3CFC295380030062660B /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD3CFF295380030062660B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		2CAD3D03295380030062660B /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		2CAD3D06295380030062660B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		2CAD3D09295380030062660B /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
 		2CAD3D0B295380040062660B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		2CAD3D0E295380040062660B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		2CAD3D10295380040062660B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		2CAD3D202953854A0062660B /* NoteListPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListPresenter.swift; sourceTree = "<group>"; };
+		2CAD3D22295385630062660B /* NoteListInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListInteractor.swift; sourceTree = "<group>"; };
+		2CAD3D24295385780062660B /* NoteListRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListRouter.swift; sourceTree = "<group>"; };
+		2CAD3D27295385EA0062660B /* NoteListConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListConfigurator.swift; sourceTree = "<group>"; };
+		2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
+		2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListViewController.xib; sourceTree = "<group>"; };
+		2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,15 +66,76 @@
 		2CAD3CFE295380030062660B /* Notes */ = {
 			isa = PBXGroup;
 			children = (
-				2CAD3CFF295380030062660B /* AppDelegate.swift */,
-				2CAD3D03295380030062660B /* ViewController.swift */,
-				2CAD3D05295380030062660B /* Main.storyboard */,
-				2CAD3D0B295380040062660B /* Assets.xcassets */,
-				2CAD3D0D295380040062660B /* LaunchScreen.storyboard */,
 				2CAD3D10295380040062660B /* Info.plist */,
+				2CAD3D16295383780062660B /* Default */,
+				2CAD3D29295386410062660B /* PresentationLayer */,
 				2CAD3D08295380030062660B /* Notes.xcdatamodeld */,
 			);
 			path = Notes;
+			sourceTree = "<group>";
+		};
+		2CAD3D16295383780062660B /* Default */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD3D17295383D00062660B /* Recources */,
+				2CAD3CFF295380030062660B /* AppDelegate.swift */,
+				2CAD3D0D295380040062660B /* LaunchScreen.storyboard */,
+			);
+			path = Default;
+			sourceTree = "<group>";
+		};
+		2CAD3D17295383D00062660B /* Recources */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD3D0B295380040062660B /* Assets.xcassets */,
+			);
+			path = Recources;
+			sourceTree = "<group>";
+		};
+		2CAD3D18295384050062660B /* NoteList */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD3D1A295384880062660B /* Providers */,
+				2CAD3D1B2953849A0062660B /* Managers */,
+				2CAD3D19295384440062660B /* Cells */,
+				2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */,
+				2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */,
+				2CAD3D202953854A0062660B /* NoteListPresenter.swift */,
+				2CAD3D22295385630062660B /* NoteListInteractor.swift */,
+				2CAD3D24295385780062660B /* NoteListRouter.swift */,
+				2CAD3D27295385EA0062660B /* NoteListConfigurator.swift */,
+			);
+			path = NoteList;
+			sourceTree = "<group>";
+		};
+		2CAD3D19295384440062660B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		2CAD3D1A295384880062660B /* Providers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Providers;
+			sourceTree = "<group>";
+		};
+		2CAD3D1B2953849A0062660B /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		2CAD3D29295386410062660B /* PresentationLayer */ = {
+			isa = PBXGroup;
+			children = (
+				2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */,
+				2CAD3D18295384050062660B /* NoteList */,
+			);
+			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -127,7 +198,7 @@
 			files = (
 				2CAD3D0F295380040062660B /* LaunchScreen.storyboard in Resources */,
 				2CAD3D0C295380040062660B /* Assets.xcassets in Resources */,
-				2CAD3D07295380030062660B /* Main.storyboard in Resources */,
+				2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -138,8 +209,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				2CAD3D04295380030062660B /* ViewController.swift in Sources */,
+				2CAD3D212953854A0062660B /* NoteListPresenter.swift in Sources */,
+				2CAD64F029538BD500F70D72 /* PresentationAssembly.swift in Sources */,
+				2CAD64ED295386BF00F70D72 /* NoteListViewController.swift in Sources */,
+				2CAD3D28295385EA0062660B /* NoteListConfigurator.swift in Sources */,
 				2CAD3D00295380030062660B /* AppDelegate.swift in Sources */,
+				2CAD3D25295385780062660B /* NoteListRouter.swift in Sources */,
+				2CAD3D23295385630062660B /* NoteListInteractor.swift in Sources */,
 				2CAD3D0A295380030062660B /* Notes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -147,14 +223,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		2CAD3D05295380030062660B /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				2CAD3D06295380030062660B /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		2CAD3D0D295380040062660B /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -292,7 +360,7 @@
 				INFOPLIST_FILE = Notes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -323,7 +391,7 @@
 				INFOPLIST_FILE = Notes/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen.storyboard;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
+				INFOPLIST_KEY_UIMainStoryboardFile = "";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown";
 				LD_RUNPATH_SEARCH_PATHS = (
