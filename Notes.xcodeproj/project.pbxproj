@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2C50379B2953957D00493908 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 2C50379A2953957D00493908 /* .gitignore */; };
+		2C50379D295396DC00493908 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2C50379C295396DC00493908 /* .swiftlint.yml */; };
 		2CAD3D00295380030062660B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3CFF295380030062660B /* AppDelegate.swift */; };
 		2CAD3D0A295380030062660B /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D08295380030062660B /* Notes.xcdatamodeld */; };
 		2CAD3D0C295380040062660B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD3D0B295380040062660B /* Assets.xcassets */; };
@@ -18,9 +20,13 @@
 		2CAD64ED295386BF00F70D72 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */; };
 		2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */; };
 		2CAD64F029538BD500F70D72 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */; };
+		9D34A6453D76F03DA7A9C783 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C6D7CB4F05A8A5387F7822 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		04C6D7CB4F05A8A5387F7822 /* Pods_Notes.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Notes.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		2C50379A2953957D00493908 /* .gitignore */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
+		2C50379C295396DC00493908 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2CAD3CFC295380030062660B /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD3CFF295380030062660B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAD3D09295380030062660B /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
@@ -34,6 +40,8 @@
 		2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListViewController.xib; sourceTree = "<group>"; };
 		2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
+		75B4A678B9667B83E40D08EA /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
+		A4FA21F721C46568E30CB2AB /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,6 +49,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9D34A6453D76F03DA7A9C783 /* Pods_Notes.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -50,8 +59,12 @@
 		2CAD3CF3295380020062660B = {
 			isa = PBXGroup;
 			children = (
+				2C50379A2953957D00493908 /* .gitignore */,
+				2C50379C295396DC00493908 /* .swiftlint.yml */,
 				2CAD3CFE295380030062660B /* Notes */,
 				2CAD3CFD295380030062660B /* Products */,
+				317CDB5C23C009F4F9C56D01 /* Pods */,
+				ADEB8A2CBF2C3303BF3AD5D8 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -138,6 +151,23 @@
 			path = PresentationLayer;
 			sourceTree = "<group>";
 		};
+		317CDB5C23C009F4F9C56D01 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				75B4A678B9667B83E40D08EA /* Pods-Notes.debug.xcconfig */,
+				A4FA21F721C46568E30CB2AB /* Pods-Notes.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		ADEB8A2CBF2C3303BF3AD5D8 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				04C6D7CB4F05A8A5387F7822 /* Pods_Notes.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -145,6 +175,8 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 2CAD3D13295380040062660B /* Build configuration list for PBXNativeTarget "Notes" */;
 			buildPhases = (
+				2C50379E2953973700493908 /* Run Swiftlint */,
+				3665AE0A6B4E8FA845331D79 /* [CP] Check Pods Manifest.lock */,
 				2CAD3CF8295380030062660B /* Sources */,
 				2CAD3CF9295380030062660B /* Frameworks */,
 				2CAD3CFA295380030062660B /* Resources */,
@@ -196,6 +228,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2C50379D295396DC00493908 /* .swiftlint.yml in Resources */,
+				2C50379B2953957D00493908 /* .gitignore in Resources */,
 				2CAD3D0F295380040062660B /* LaunchScreen.storyboard in Resources */,
 				2CAD3D0C295380040062660B /* Assets.xcassets in Resources */,
 				2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */,
@@ -203,6 +237,50 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2C50379E2953973700493908 /* Run Swiftlint */ = {
+			isa = PBXShellScriptBuildPhase;
+			alwaysOutOfDate = 1;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = "Run Swiftlint";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "${PODS_ROOT}/SwiftLint/swiftlint\n";
+		};
+		3665AE0A6B4E8FA845331D79 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Notes-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		2CAD3CF8295380030062660B /* Sources */ = {
@@ -350,6 +428,7 @@
 		};
 		2CAD3D14295380040062660B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 75B4A678B9667B83E40D08EA /* Pods-Notes.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -381,6 +460,7 @@
 		};
 		2CAD3D15295380040062660B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4FA21F721C46568E30CB2AB /* Pods-Notes.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
