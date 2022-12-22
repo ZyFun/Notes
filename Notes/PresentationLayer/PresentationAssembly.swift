@@ -8,13 +8,13 @@
 import Foundation
 
 final class PresentationAssembly {
-//    private let serviceAssembly = ServiceAssembly()
-//
-//    private let coreDataService: ICoreDataService
+    private let serviceAssembly = ServiceAssembly()
+
+    private let coreDataService: ICoreDataService
     
-//    init() {
-//        coreDataService = serviceAssembly.coreDataService
-//    }
+    init() {
+        coreDataService = serviceAssembly.coreDataService
+    }
     
     lazy var noteList: NoteListConfigurator = {
         return NoteListConfigurator()
