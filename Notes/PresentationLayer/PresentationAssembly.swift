@@ -17,6 +17,6 @@ final class PresentationAssembly {
     }
     
     lazy var noteList: NoteListConfigurator = {
-        return NoteListConfigurator()
+        return NoteListConfigurator(coreDataService: coreDataService)
     }()
 }
