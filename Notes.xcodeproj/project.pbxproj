@@ -28,6 +28,12 @@
 		2CAD64ED295386BF00F70D72 /* NoteListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */; };
 		2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */; };
 		2CAD64F029538BD500F70D72 /* PresentationAssembly.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */; };
+		2CEEC8C52955AE8400C8AC4D /* NoteViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8C32955AE8400C8AC4D /* NoteViewController.swift */; };
+		2CEEC8C62955AE8400C8AC4D /* NoteViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2CEEC8C42955AE8400C8AC4D /* NoteViewController.xib */; };
+		2CEEC8C82955AEF700C8AC4D /* NotePresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8C72955AEF700C8AC4D /* NotePresenter.swift */; };
+		2CEEC8CA2955AF0400C8AC4D /* NoteInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8C92955AF0400C8AC4D /* NoteInteractor.swift */; };
+		2CEEC8CC2955AF1200C8AC4D /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8CB2955AF1200C8AC4D /* NoteRouter.swift */; };
+		2CEEC8CE2955AF2400C8AC4D /* NoteConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8CD2955AF2400C8AC4D /* NoteConfigurator.swift */; };
 		9D34A6453D76F03DA7A9C783 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C6D7CB4F05A8A5387F7822 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +62,12 @@
 		2CAD64EB295386BF00F70D72 /* NoteListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteListViewController.swift; sourceTree = "<group>"; };
 		2CAD64EC295386BF00F70D72 /* NoteListViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteListViewController.xib; sourceTree = "<group>"; };
 		2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PresentationAssembly.swift; sourceTree = "<group>"; };
+		2CEEC8C32955AE8400C8AC4D /* NoteViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteViewController.swift; sourceTree = "<group>"; };
+		2CEEC8C42955AE8400C8AC4D /* NoteViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = NoteViewController.xib; sourceTree = "<group>"; };
+		2CEEC8C72955AEF700C8AC4D /* NotePresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotePresenter.swift; sourceTree = "<group>"; };
+		2CEEC8C92955AF0400C8AC4D /* NoteInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteInteractor.swift; sourceTree = "<group>"; };
+		2CEEC8CB2955AF1200C8AC4D /* NoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRouter.swift; sourceTree = "<group>"; };
+		2CEEC8CD2955AF2400C8AC4D /* NoteConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteConfigurator.swift; sourceTree = "<group>"; };
 		75B4A678B9667B83E40D08EA /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		A4FA21F721C46568E30CB2AB /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -203,8 +215,22 @@
 			children = (
 				2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */,
 				2CAD3D18295384050062660B /* NoteList */,
+				2CEEC8C22955AE5D00C8AC4D /* Note */,
 			);
 			path = PresentationLayer;
+			sourceTree = "<group>";
+		};
+		2CEEC8C22955AE5D00C8AC4D /* Note */ = {
+			isa = PBXGroup;
+			children = (
+				2CEEC8C42955AE8400C8AC4D /* NoteViewController.xib */,
+				2CEEC8C32955AE8400C8AC4D /* NoteViewController.swift */,
+				2CEEC8C72955AEF700C8AC4D /* NotePresenter.swift */,
+				2CEEC8C92955AF0400C8AC4D /* NoteInteractor.swift */,
+				2CEEC8CB2955AF1200C8AC4D /* NoteRouter.swift */,
+				2CEEC8CD2955AF2400C8AC4D /* NoteConfigurator.swift */,
+			);
+			path = Note;
 			sourceTree = "<group>";
 		};
 		317CDB5C23C009F4F9C56D01 /* Pods */ = {
@@ -288,6 +314,7 @@
 				2C50379B2953957D00493908 /* .gitignore in Resources */,
 				2CAD3D0F295380040062660B /* LaunchScreen.storyboard in Resources */,
 				2CAD3D0C295380040062660B /* Assets.xcassets in Resources */,
+				2CEEC8C62955AE8400C8AC4D /* NoteViewController.xib in Resources */,
 				2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -352,12 +379,17 @@
 				2CAD3D28295385EA0062660B /* NoteListConfigurator.swift in Sources */,
 				2CAD3D00295380030062660B /* AppDelegate.swift in Sources */,
 				2C30529D29548FC100820B3F /* NoteModel.swift in Sources */,
+				2CEEC8C52955AE8400C8AC4D /* NoteViewController.swift in Sources */,
+				2CEEC8CC2955AF1200C8AC4D /* NoteRouter.swift in Sources */,
 				2CAD3D25295385780062660B /* NoteListRouter.swift in Sources */,
 				2CAD3D23295385630062660B /* NoteListInteractor.swift in Sources */,
+				2CEEC8CE2955AF2400C8AC4D /* NoteConfigurator.swift in Sources */,
 				2C3052A22954A1CE00820B3F /* NoteListFetchedResultsManager.swift in Sources */,
+				2CEEC8CA2955AF0400C8AC4D /* NoteInteractor.swift in Sources */,
 				2C3052A42954A33200820B3F /* NoteListCell.swift in Sources */,
 				2C3052A92954A68200820B3F /* UIImage+GraphicsImageRenderer.swift in Sources */,
 				2C3052A02954919700820B3F /* ConsoleLogger.swift in Sources */,
+				2CEEC8C82955AEF700C8AC4D /* NotePresenter.swift in Sources */,
 				2CAD3D0A295380030062660B /* Notes.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
