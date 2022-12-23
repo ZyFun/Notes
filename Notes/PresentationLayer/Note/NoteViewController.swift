@@ -48,6 +48,7 @@ extension NoteViewController {
     func setup() {
         view.backgroundColor = .systemGray6
         setupNavigationBar()
+        setupUI()
         setTransferredData()
     }
     
@@ -61,6 +62,34 @@ extension NoteViewController {
     /// Метод для настройки заголовка navigation bar
     func titleSetup() {
         navigationItem.largeTitleDisplayMode = .never
+    }
+    
+    // MARK: - Setup UI
+    
+    func setupUI() {
+        setupTextFields()
+        setupTextViews()
+        setupButtons()
+    }
+    
+    func setupTextFields() {
+        titleTextField.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
+        titleTextField.placeholder = "Введите заголовок"
+        titleTextField.borderStyle = .none
+    }
+    
+    func setupTextViews() {
+        noteTextView.font = UIFont(name: "HelveticaNeue", size: 17)
+        noteTextView.layer.cornerRadius = 10
+        noteTextView.clipsToBounds = true
+    }
+    
+    func setupButtons() {
+        saveButton.setTitle("Сохранить", for: .normal)
+        saveButton.setTitleColor(.white, for: .normal)
+        saveButton.setTitleColor(.systemGray, for: .highlighted)
+        saveButton.backgroundColor = #colorLiteral(red: 0.196842283, green: 0.4615264535, blue: 0.4103206396, alpha: 1)
+        saveButton.layer.cornerRadius = 16
     }
     
     // MARK: - Display data setting

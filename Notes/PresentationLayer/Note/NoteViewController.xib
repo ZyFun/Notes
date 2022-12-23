@@ -21,8 +21,13 @@
             <rect key="frame" x="0.0" y="0.0" width="393" height="852"/>
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Заголовок" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-th-VUS">
+                    <rect key="frame" x="16" y="79" width="361" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
                 <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="U9K-Qq-ATb">
-                    <rect key="frame" x="16" y="138" width="361" height="580"/>
+                    <rect key="frame" x="16" y="129" width="361" height="589"/>
                     <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                     <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
                     <color key="textColor" systemColor="labelColor"/>
@@ -37,20 +42,15 @@
                         <action selector="saveButtonPressed" destination="-1" eventType="touchUpInside" id="XMA-wo-Lt0"/>
                     </connections>
                 </button>
-                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Заголовок" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dRB-th-VUS">
-                    <rect key="frame" x="16" y="79" width="361" height="34"/>
-                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                    <textInputTraits key="textInputTraits"/>
-                </textField>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
                 <constraint firstItem="jZL-T5-hUr" firstAttribute="top" secondItem="U9K-Qq-ATb" secondAttribute="bottom" constant="25" id="2CU-gj-g33"/>
-                <constraint firstItem="U9K-Qq-ATb" firstAttribute="top" secondItem="dRB-th-VUS" secondAttribute="bottom" constant="25" id="2wa-Y7-Mu1"/>
+                <constraint firstItem="U9K-Qq-ATb" firstAttribute="top" secondItem="dRB-th-VUS" secondAttribute="bottom" constant="16" id="2wa-Y7-Mu1"/>
                 <constraint firstItem="jZL-T5-hUr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Cl-I4-uL1"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jZL-T5-hUr" secondAttribute="bottom" constant="40" id="K6C-aS-Ye2"/>
-                <constraint firstItem="dRB-th-VUS" firstAttribute="top" secondItem="fnl-2z-Ty3" secondAttribute="top" constant="20" id="LS4-5J-VpB"/>
+                <constraint firstItem="dRB-th-VUS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="20" id="Ovv-t6-GFH"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U9K-Qq-ATb" secondAttribute="trailing" constant="16" id="rwT-XG-2Ap"/>
                 <constraint firstItem="U9K-Qq-ATb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="w9S-gR-BkQ"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="dRB-th-VUS" secondAttribute="trailing" constant="16" id="wGj-Q8-fIJ"/>
