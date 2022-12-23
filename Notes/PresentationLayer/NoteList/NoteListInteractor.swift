@@ -45,8 +45,8 @@ extension NoteListInteractor: NoteListBusinessLogic {
     }
     
     func delete(_ note: DBNote) {
-        coreDataService?.performSave { context in
-            self.coreDataService?.delete(note, context: context)
+        coreDataService?.performSave { [weak self] context in
+            self?.coreDataService?.delete(note, context: context)
         }
     }
 }

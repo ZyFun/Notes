@@ -23,6 +23,10 @@ extension NoteInteractor: NoteBusinessLogic {
             return
         }
         
+        // Не использую [weak self] в замыкании из соображений, что после выхода
+        // из модуля мне нужно продолжать удерживать сервис в памяти,
+        // пока данные не сохранятся.
+        // Возможно я не прав, поправьте пожалуйста)
         coreDataService?.performSave { context in
             if let currentNote {
                 self.coreDataService?.update(currentNote, newData: newNote, context: context)
