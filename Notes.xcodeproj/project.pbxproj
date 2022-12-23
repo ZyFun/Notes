@@ -96,6 +96,7 @@
 		2C30529B29548FB200820B3F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				2CAD3D08295380030062660B /* Notes.xcdatamodeld */,
 				2C30529C29548FC100820B3F /* NoteModel.swift */,
 			);
 			path = Models;
@@ -142,7 +143,6 @@
 			isa = PBXGroup;
 			children = (
 				2CAD3D10295380040062660B /* Info.plist */,
-				2CAD3D08295380030062660B /* Notes.xcdatamodeld */,
 				2CAD3D16295383780062660B /* Default */,
 				2C30529E2954916600820B3F /* Supports */,
 				2C30529B29548FB200820B3F /* Models */,

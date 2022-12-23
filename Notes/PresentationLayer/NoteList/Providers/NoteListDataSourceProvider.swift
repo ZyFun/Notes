@@ -103,7 +103,7 @@ extension NoteListDataSourceProvider: UITableViewDelegate {
             style: .normal,
             title: ""
         ) { [weak self] _, _, isDone in
-//            self?.presenter?.delete(currentNote)
+            self?.presenter?.delete(currentNote)
             
             isDone(true)
         }

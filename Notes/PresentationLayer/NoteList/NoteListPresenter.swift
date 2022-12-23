@@ -12,6 +12,7 @@ protocol NoteListPresentationLogic: AnyObject {
 }
 
 protocol NoteListViewControllerOutput {
+    func delete(_ note: DBNote)
     func routeToNote(with currentNote: DBNote?)
 }
 
@@ -27,6 +28,14 @@ final class NoteListPresenter {
 // MARK: - View Controller Output
 
 extension NoteListPresenter: NoteListViewControllerOutput {
+    
+    // MARK: - CRUD
+    
+    func delete(_ note: DBNote) {
+        interactor?.delete(note)
+    }
+    
+    // MARK: - Routing
     
     func routeToNote(with currentNote: DBNote?) {
         router?.routeTo(target: .noteVC(currentNote))

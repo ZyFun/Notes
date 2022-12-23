@@ -129,7 +129,7 @@ extension CoreDataService: ICoreDataService {
         currentObject.title = newData.title
         currentObject.note = newData.note
         
-        ConsoleLogger.info("Запуск изменения лекарства \(currentNote.title ?? "no name")")
+        ConsoleLogger.info("Запуск изменения объекта \(currentNote.title ?? "no name")")
     }
     
     func delete(

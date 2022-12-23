@@ -46,5 +46,6 @@ final class NoteListConfigurator {
         presenter.interactor = interactor
         presenter.router = router
         interactor.presenter = presenter
+        interactor.coreDataService = coreDataService
     }
 }
