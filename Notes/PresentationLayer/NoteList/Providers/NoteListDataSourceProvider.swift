@@ -88,10 +88,8 @@ extension NoteListDataSourceProvider: UITableViewDelegate {
         _ tableView: UITableView,
         didSelectRowAt indexPath: IndexPath
     ) {
-        tableView.deselectRow(at: indexPath, animated: true)
-        
         guard let currentNote = fetchNote(at: indexPath) else { return }
-//        presenter?.routeToNote(with: currentNote)
+        presenter?.routeToNote(with: currentNote)
     }
     
     func tableView(

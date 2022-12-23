@@ -19,21 +19,23 @@ final class NoteListRouter {
     }
     
     enum Target {
-        case noteVC
+        case noteVC(NoteModel)
     }
 }
 
 extension NoteListRouter: NoteListRoutingLogic {
     func routeTo(target: Target) {
         switch target {
-        case .noteVC:
-            print("Route to note worked")
-            
-//            let noteVC = NoteViewController()
-//
-//            PresentationAssembly().note.config(view: noteVC)
-//
-//            navigationController?.present(noteVC, animated: true)
+        case .noteVC(let note):
+            let noteVC = NoteViewController()
+
+            PresentationAssembly().note.config(
+                view: noteVC,
+                navigationController: navigationController,
+                note: note
+            )
+
+            navigationController?.pushViewController(noteVC, animated: true)
         }
     }
 }

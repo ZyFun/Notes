@@ -12,7 +12,7 @@ protocol NoteListPresentationLogic: AnyObject {
 }
 
 protocol NoteListViewControllerOutput {
-    
+    func routeToNote(with currentNote: DBNote)
 }
 
 final class NoteListPresenter {
@@ -33,7 +33,15 @@ extension NoteListPresenter: NoteListViewControllerOutput {
     // MARK: - CRUD methods
     
     // MARK: - Routing
-
+    
+    func routeToNote(with currentNote: DBNote) {
+        let note = NoteModel(
+            title: currentNote.title ?? "",
+            note: currentNote.note ?? ""
+        )
+        
+        router?.routeTo(target: .noteVC(note))
+    }
 }
 
 // MARK: - Presentation Logic

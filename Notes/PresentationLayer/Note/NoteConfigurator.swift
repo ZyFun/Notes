@@ -17,7 +17,11 @@ final class NoteConfigurator {
         self.coreDataService = coreDataService
     }
     
-    func config(view: UIViewController, navigationController: UINavigationController?) {
+    func config(
+        view: UIViewController,
+        navigationController: UINavigationController?,
+        note: NoteModel
+    ) {
         guard let view = view as? NoteViewController else {
             ConsoleLogger.error("ViewController заметки не инициализирован")
             return
@@ -28,6 +32,7 @@ final class NoteConfigurator {
         let router = NoteRouter(withNavigationController: navigationController)
         
         view.presenter = presenter
+        view.note = note
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router
