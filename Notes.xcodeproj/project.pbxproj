@@ -35,6 +35,7 @@
 		2CEEC8CC2955AF1200C8AC4D /* NoteRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8CB2955AF1200C8AC4D /* NoteRouter.swift */; };
 		2CEEC8CE2955AF2400C8AC4D /* NoteConfigurator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CEEC8CD2955AF2400C8AC4D /* NoteConfigurator.swift */; };
 		2CF4DBB62956318800B57C4C /* UIAlertController+CustomController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4DBB52956318800B57C4C /* UIAlertController+CustomController.swift */; };
+		2CF4DBB829563B6F00B57C4C /* FirstStartAppService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CF4DBB729563B6F00B57C4C /* FirstStartAppService.swift */; };
 		9D34A6453D76F03DA7A9C783 /* Pods_Notes.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 04C6D7CB4F05A8A5387F7822 /* Pods_Notes.framework */; };
 /* End PBXBuildFile section */
 
@@ -70,6 +71,7 @@
 		2CEEC8CB2955AF1200C8AC4D /* NoteRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteRouter.swift; sourceTree = "<group>"; };
 		2CEEC8CD2955AF2400C8AC4D /* NoteConfigurator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoteConfigurator.swift; sourceTree = "<group>"; };
 		2CF4DBB52956318800B57C4C /* UIAlertController+CustomController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIAlertController+CustomController.swift"; sourceTree = "<group>"; };
+		2CF4DBB729563B6F00B57C4C /* FirstStartAppService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstStartAppService.swift; sourceTree = "<group>"; };
 		75B4A678B9667B83E40D08EA /* Pods-Notes.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.debug.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.debug.xcconfig"; sourceTree = "<group>"; };
 		A4FA21F721C46568E30CB2AB /* Pods-Notes.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Notes.release.xcconfig"; path = "Target Support Files/Pods-Notes/Pods-Notes.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -91,6 +93,7 @@
 			children = (
 				2C30529729548D7800820B3F /* ServiceAssembly.swift */,
 				2C30529929548DAB00820B3F /* CoreDataService.swift */,
+				2CF4DBB729563B6F00B57C4C /* FirstStartAppService.swift */,
 			);
 			path = ServiceLayer;
 			sourceTree = "<group>";
@@ -379,6 +382,7 @@
 				2C3052A62954A5A000820B3F /* NoteListDataSourceProvider.swift in Sources */,
 				2CAD64ED295386BF00F70D72 /* NoteListViewController.swift in Sources */,
 				2C30529829548D7800820B3F /* ServiceAssembly.swift in Sources */,
+				2CF4DBB829563B6F00B57C4C /* FirstStartAppService.swift in Sources */,
 				2CAD3D28295385EA0062660B /* NoteListConfigurator.swift in Sources */,
 				2CAD3D00295380030062660B /* AppDelegate.swift in Sources */,
 				2C30529D29548FC100820B3F /* NoteModel.swift in Sources */,

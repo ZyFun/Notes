@@ -11,4 +11,8 @@ final class ServiceAssembly {
     lazy var coreDataService: ICoreDataService = {
         return CoreDataService.shared
     }()
+    
+    lazy var firstStartAppService: IFirstStartAppService = {
+        return FirstStartAppService()
+    }()
 }

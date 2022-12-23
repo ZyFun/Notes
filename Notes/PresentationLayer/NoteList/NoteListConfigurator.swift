@@ -11,9 +11,11 @@ final class NoteListConfigurator {
     
     private let coreDataService: ICoreDataService
     private let fetchedResultManager: INoteListFetchedResultsManager
+    private let firstStartAppService: IFirstStartAppService
     
     init(
-        coreDataService: ICoreDataService
+        coreDataService: ICoreDataService,
+        firstStartAppService: IFirstStartAppService
     ) {
         self.coreDataService = coreDataService
         fetchedResultManager = NoteListFetchedResultsManager(
@@ -23,6 +25,7 @@ final class NoteListConfigurator {
                 sortAscending: true
             )
         )
+        self.firstStartAppService = firstStartAppService
     }
     
     func config(view: UIViewController, navigationController: UINavigationController?) {
@@ -47,5 +50,6 @@ final class NoteListConfigurator {
         presenter.router = router
         interactor.presenter = presenter
         interactor.coreDataService = coreDataService
+        interactor.firstStartAppService = firstStartAppService
     }
 }

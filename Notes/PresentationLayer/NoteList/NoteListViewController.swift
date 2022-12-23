@@ -29,6 +29,7 @@ final class NoteListViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        presenter?.checkIsFirstStartApp()
     }
 }
 

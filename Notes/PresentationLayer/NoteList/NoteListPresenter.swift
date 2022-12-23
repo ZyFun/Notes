@@ -12,6 +12,9 @@ protocol NoteListPresentationLogic: AnyObject {
 }
 
 protocol NoteListViewControllerOutput {
+    /// Метод для проверки первого старта приложения после установки
+    /// - Если приложение запускается впервые, создаётся заметка с инструкцией.
+    func checkIsFirstStartApp()
     func delete(_ note: DBNote)
     func routeToNote(with currentNote: DBNote?)
 }
@@ -28,6 +31,9 @@ final class NoteListPresenter {
 // MARK: - View Controller Output
 
 extension NoteListPresenter: NoteListViewControllerOutput {
+    func checkIsFirstStartApp() {
+        interactor?.checkIsFirstStartApp()
+    }
     
     // MARK: - CRUD
     

@@ -11,13 +11,18 @@ final class PresentationAssembly {
     private let serviceAssembly = ServiceAssembly()
 
     private let coreDataService: ICoreDataService
+    private let firstStartAppService: IFirstStartAppService
     
     init() {
         coreDataService = serviceAssembly.coreDataService
+        firstStartAppService = serviceAssembly.firstStartAppService
     }
     
     lazy var noteList: NoteListConfigurator = {
-        return NoteListConfigurator(coreDataService: coreDataService)
+        return NoteListConfigurator(
+            coreDataService: coreDataService,
+            firstStartAppService: firstStartAppService
+        )
     }()
     
     lazy var note: NoteConfigurator = {
