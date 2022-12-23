@@ -8,6 +8,7 @@
 import Foundation
 
 protocol NotePresentationLogic: AnyObject {
+    func showError()
     /// Метод для возврата в список заметок после сохранения заметки
     func returnToBack()
 }
@@ -44,6 +45,10 @@ extension NotePresenter: NoteViewControllerOutput {
 // MARK: - Presentation Logic
 
 extension NotePresenter: NotePresentationLogic {
+    func showError() {
+        view?.showErrorAlert(errorMessage: .noTitleNote)
+    }
+    
     func returnToBack() {
         router?.routeTo(target: .backToNoteList)
     }

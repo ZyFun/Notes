@@ -8,7 +8,7 @@
 import UIKit
 
 protocol NoteDisplayLogic: AnyObject {
-    
+    func showErrorAlert(errorMessage: UIAlertController.ErrorMessage)
 }
 
 final class NoteViewController: UIViewController {
@@ -109,4 +109,12 @@ extension NoteViewController {
 
 extension NoteViewController: NoteDisplayLogic {
     
+    func showErrorAlert(errorMessage: UIAlertController.ErrorMessage) {
+        let alert = UIAlertController
+            .createErrorAlertController(errorMessage: errorMessage)
+        
+        alert.actionError()
+        
+        present(alert, animated: true)
+    }
 }
