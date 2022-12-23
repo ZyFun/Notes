@@ -49,7 +49,7 @@ extension NoteListViewController {
     /// Метод настройки navigation bar
     func setupNavigationBar() {
         titleSetup()
-//        addBarButtons()
+        addBarButtons()
         addSearchController()
     }
     
@@ -57,6 +57,21 @@ extension NoteListViewController {
     func titleSetup() {
         navigationController?.navigationBar.prefersLargeTitles = true
         title = "Заметки"
+    }
+    
+    /// Добавление кнопок в navigation bar
+    func addBarButtons() {
+        let addButton = UIBarButtonItem(
+            barButtonSystemItem: .add,
+            target: self,
+            action: #selector(addNewNote)
+        )
+        navigationItem.rightBarButtonItems = [addButton]
+    }
+    /// Добавление нового лекарства
+    @objc func addNewNote() {
+        presenter?.routeToNote(with: nil)
+//        presenter?.updatePlaceholder()
     }
     
     func addSearchController() {
