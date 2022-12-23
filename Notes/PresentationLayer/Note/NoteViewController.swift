@@ -16,7 +16,7 @@ final class NoteViewController: UIViewController {
     // MARK: - Public properties
     
     var presenter: NoteViewControllerOutput?
-    var note: NoteModel?
+    var note: DBNote?
     
     // MARK: - Outlets
     
@@ -36,7 +36,11 @@ final class NoteViewController: UIViewController {
     // MARK: - IBActions
     
     @IBAction func saveButtonPressed() {
-        
+        presenter?.save(
+            title: titleTextField.text,
+            note: noteTextView.text,
+            for: note
+        )
     }
 }
 
@@ -96,7 +100,7 @@ extension NoteViewController {
     
     // TODO: (#Fix) Не совсем понимаю, где более правильно писать этот метод. Прямо в классе, или он должен чем-то запускаться из презентера?
     func setTransferredData() {
-        titleTextField.text = note?.note
+        titleTextField.text = note?.title
         noteTextView.text = note?.note
     }
 }

@@ -8,11 +8,12 @@
 import Foundation
 
 protocol NotePresentationLogic: AnyObject {
-    
+    /// Метод для возврата в список заметок после сохранения заметки
+    func returnToBack()
 }
 
 protocol NoteViewControllerOutput {
-    
+    func save(title: String?, note: String?, for currentNote: DBNote?)
 }
 
 final class NotePresenter {
@@ -28,16 +29,22 @@ final class NotePresenter {
 
 extension NotePresenter: NoteViewControllerOutput {
     
-    // MARK: - Alerts
-    
     // MARK: - CRUD methods
     
-    // MARK: - Routing
-
+    func save(title: String?, note: String?, for currentNote: DBNote?) {
+        let newNote = NoteModel(
+            title: title,
+            note: note
+        )
+        
+        interactor?.save(currentNote: currentNote, with: newNote)
+    }
 }
 
 // MARK: - Presentation Logic
 
 extension NotePresenter: NotePresentationLogic {
-    
+    func returnToBack() {
+        router?.routeTo(target: .backToNoteList)
+    }
 }

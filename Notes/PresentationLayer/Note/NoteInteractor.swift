@@ -8,7 +8,7 @@
 import Foundation
 
 protocol NoteBusinessLogic {
-    
+    func save(currentNote: DBNote?, with newNote: NoteModel)
 }
 
 final class NoteInteractor {
@@ -17,5 +17,15 @@ final class NoteInteractor {
 }
 
 extension NoteInteractor: NoteBusinessLogic {
-    
+    func save(currentNote: DBNote?, with newNote: NoteModel) {
+        coreDataService?.performSave { context in
+            if let currentNote {
+                self.coreDataService?.update(currentNote, newData: newNote, context: context)
+            } else {
+                self.coreDataService?.create(newNote, context: context)
+            }
+        }
+        
+        presenter?.returnToBack()
+    }
 }

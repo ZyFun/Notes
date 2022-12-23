@@ -27,8 +27,7 @@ extension NoteRouter: NoteRoutingLogic {
     func routeTo(target: Target) {
         switch target {
         case .backToNoteList:
-            print("Route to note worked")
-            
+            navigationController?.popViewController(animated: true)
         }
     }
 }

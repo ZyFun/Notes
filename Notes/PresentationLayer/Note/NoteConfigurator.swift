@@ -20,7 +20,7 @@ final class NoteConfigurator {
     func config(
         view: UIViewController,
         navigationController: UINavigationController?,
-        note: NoteModel
+        note: DBNote?
     ) {
         guard let view = view as? NoteViewController else {
             ConsoleLogger.error("ViewController заметки не инициализирован")

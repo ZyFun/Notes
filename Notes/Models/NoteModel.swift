@@ -8,6 +8,6 @@
 import Foundation
 
 struct NoteModel {
-    let title: String
-    let note: String
+    let title: String?
+    let note: String?
 }
