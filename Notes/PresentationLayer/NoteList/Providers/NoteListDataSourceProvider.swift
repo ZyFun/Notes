@@ -20,12 +20,12 @@ final class NoteListDataSourceProvider: NSObject, INoteListDataSourceProvider {
     
     // MARK: - Private properties
     
-    private let presenter: NoteListPresenter?
+    private let presenter: NoteListViewControllerOutput?
     
     // MARK: - Initializer
     
     init(
-        presenter: NoteListPresenter?,
+        presenter: NoteListViewControllerOutput?,
         resultManager: INoteListFetchedResultsManager
     ) {
         self.presenter = presenter

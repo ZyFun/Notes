@@ -15,7 +15,7 @@ protocol NotePresentationLogic: AnyObject {
 
 protocol NoteViewControllerOutput {
     func presentTransferredData(from note: DBNote?)
-    func changeNoteFontSize(_ size: CGFloat)
+    func changeFontNote(_ name: String, _ size: CGFloat?)
     func save(title: String?, note: String?, for currentNote: DBNote?)
 }
 
@@ -38,8 +38,8 @@ extension NotePresenter: NoteViewControllerOutput {
         view?.presentTransferredData(from: note)
     }
     
-    func changeNoteFontSize(_ size: CGFloat) {
-        view?.changeNoteFontSize(size)
+    func changeFontNote(_ name: String, _ size: CGFloat?) {
+        view?.changeFontNote(name, size)
     }
     
     // MARK: - CRUD methods

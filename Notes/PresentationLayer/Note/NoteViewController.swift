@@ -9,7 +9,11 @@ import UIKit
 
 protocol NoteDisplayLogic: AnyObject {
     func presentTransferredData(from note: DBNote?)
-    func changeNoteFontSize(_ size: CGFloat)
+    /// Метод для изменения шрифта заметки
+    /// - Parameters:
+    ///   - name: принимает имя шрифта
+    ///   - size: принимает размер шрифта. При изменении имени, передача размера не требуется.
+    func changeFontNote(_ name: String, _ size: CGFloat?)
     func showErrorAlert(errorMessage: UIAlertController.ErrorMessage)
 }
 
@@ -18,6 +22,7 @@ final class NoteViewController: UIViewController {
     // MARK: - Public properties
     
     var presenter: NoteViewControllerOutput?
+    var pickerViewDataSource: IPickerViewDataSourceProvider?
     var note: DBNote?
     
     // MARK: - Outlets
@@ -25,14 +30,18 @@ final class NoteViewController: UIViewController {
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
     @IBOutlet weak var fontSizeStepper: UIStepper!
+    @IBOutlet weak var fontTextField: UITextField!
     @IBOutlet weak var saveButton: UIButton!
     
     // MARK: - Private properties
     
+    private let fontPickerView = UIPickerView()
     /// Имя текущего  шрифта для заметок
     /// Используется для возможности установить пользователем другой шрифт заметки
     /// - по умолчанию применяется шрифт HelveticaNeue
-    private var nameFontNote = "HelveticaNeue"
+    private var fontNoteName = "HelveticaNeue"
+    private var fontNoteSize: CGFloat = 17
+    private let fontNames = FontNameModel.getFontNames()
     
     // MARK: - Life Cycle
     
@@ -55,7 +64,7 @@ final class NoteViewController: UIViewController {
     @IBAction func fontSizeStepperPressed(_ sender: UIStepper) {
         let fontSize = CGFloat(sender.value)
         
-        presenter?.changeNoteFontSize(fontSize)
+        presenter?.changeFontNote(fontNoteName, fontSize)
     }
     
     @IBAction func saveButtonPressed() {
@@ -69,7 +78,7 @@ final class NoteViewController: UIViewController {
 
 // MARK: - Конфигурирование ViewController
 
-extension NoteViewController {
+private extension NoteViewController {
     
     /// Метод инициализации VC
     func setup() {
@@ -93,20 +102,67 @@ extension NoteViewController {
     // MARK: - Setup UI
     
     func setupUI() {
+        setupPickerView()
         setupTextFields()
         setupTextViews()
         setupSteppers()
         setupButtons()
     }
     
+    func setupPickerView() {
+        fontPickerView.delegate = pickerViewDataSource
+        fontPickerView.dataSource = pickerViewDataSource
+        pickerViewDataSource?.fontNames = fontNames
+        addToolbarToKeyboard(for: fontTextField)
+    }
+    
+    /// Метод добавляет тулбар на клавиатуру для определенного поля редактирования.
+    /// - Parameter textField: принимает поле, для клавиатуры которого
+    /// требуется добавить тулбар.
+    func addToolbarToKeyboard(for textField: UITextField) {
+        let toolbar = UIToolbar(
+            frame: CGRect(
+                x: 0,
+                y: 0,
+                width: view.bounds.width,
+                height: 44
+            )
+        )
+        
+        let leftSpacing = UIBarButtonItem(
+            barButtonSystemItem: .flexibleSpace,
+            target: nil,
+            action: nil
+        )
+        
+        let doneButton = UIBarButtonItem(
+            barButtonSystemItem: .done,
+            target: self,
+            action: #selector(toolBarDoneButtonPressed)
+        )
+        
+        toolbar.setItems([leftSpacing, doneButton], animated: false)
+        textField.inputAccessoryView = toolbar
+    }
+    
+    @objc func toolBarDoneButtonPressed() {
+        let selectedRow = fontPickerView.selectedRow(inComponent: 0)
+        fontTextField.text = fontNames[selectedRow].name
+        fontTextField.resignFirstResponder()
+    }
+    
     func setupTextFields() {
         titleTextField.font = UIFont(name: "HelveticaNeue-Bold", size: 25)
         titleTextField.placeholder = "Введите заголовок"
         titleTextField.borderStyle = .none
+        
+        fontTextField.inputView = fontPickerView
+        fontTextField.text = fontNoteName
+        fontTextField.tintColor = .clear
     }
     
     func setupTextViews() {
-        noteTextView.font = UIFont(name: nameFontNote, size: 17)
+        noteTextView.font = UIFont(name: fontNoteName, size: fontNoteSize)
         noteTextView.layer.cornerRadius = 10
         noteTextView.clipsToBounds = true
     }
@@ -134,8 +190,15 @@ extension NoteViewController: NoteDisplayLogic {
         noteTextView.text = note?.note
     }
     
-    func changeNoteFontSize(_ size: CGFloat) {
-        noteTextView.font = UIFont(name: nameFontNote, size: size)
+    func changeFontNote(_ name: String, _ size: CGFloat?) {
+        fontNoteName = name
+        
+        if let fontNoteSize = size {
+            noteTextView.font = UIFont(name: fontNoteName, size: fontNoteSize)
+            self.fontNoteSize = fontNoteSize
+        } else {
+            noteTextView.font = UIFont(name: fontNoteName, size: fontNoteSize)
+        }
     }
     
     func showErrorAlert(errorMessage: UIAlertController.ErrorMessage) {

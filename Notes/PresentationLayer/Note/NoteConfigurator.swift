@@ -30,9 +30,11 @@ final class NoteConfigurator {
         let presenter = NotePresenter()
         let interactor = NoteInteractor()
         let router = NoteRouter(withNavigationController: navigationController)
+        let pickerViewDataSource = PickerViewDataSourceProvider(presenter: presenter)
         
         view.presenter = presenter
         view.note = note
+        view.pickerViewDataSource = pickerViewDataSource
         presenter.view = view
         presenter.interactor = interactor
         presenter.router = router

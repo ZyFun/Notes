@@ -11,6 +11,7 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="NoteViewController" customModule="Notes" customModuleProvider="target">
             <connections>
                 <outlet property="fontSizeStepper" destination="dW0-HA-VD3" id="sOJ-g2-aKv"/>
+                <outlet property="fontTextField" destination="YXR-S9-xy4" id="RsN-Fa-14h"/>
                 <outlet property="noteTextView" destination="U9K-Qq-ATb" id="EP5-Fx-QPR"/>
                 <outlet property="saveButton" destination="jZL-T5-hUr" id="d4b-Oe-39S"/>
                 <outlet property="titleTextField" destination="dRB-th-VUS" id="8SN-bc-NI5"/>
@@ -55,18 +56,34 @@
                         <action selector="fontSizeStepperPressed:" destination="-1" eventType="valueChanged" id="a9k-ul-12Z"/>
                     </connections>
                 </stepper>
+                <textField opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="248" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" clearsOnBeginEditing="YES" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="YXR-S9-xy4">
+                    <rect key="frame" x="193" y="690" width="180" height="34"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                    <textInputTraits key="textInputTraits"/>
+                </textField>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Font:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NJ5-kC-Nc2">
+                    <rect key="frame" x="146" y="696.66666666666663" width="39" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <nil key="textColor"/>
+                    <nil key="highlightedColor"/>
+                </label>
             </subviews>
             <viewLayoutGuide key="safeArea" id="fnl-2z-Ty3"/>
             <color key="backgroundColor" systemColor="systemBackgroundColor"/>
             <constraints>
+                <constraint firstItem="NJ5-kC-Nc2" firstAttribute="centerY" secondItem="dW0-HA-VD3" secondAttribute="centerY" id="1Sw-Ke-ZyZ"/>
                 <constraint firstItem="U9K-Qq-ATb" firstAttribute="top" secondItem="dRB-th-VUS" secondAttribute="bottom" constant="16" id="2wa-Y7-Mu1"/>
                 <constraint firstItem="jZL-T5-hUr" firstAttribute="centerX" secondItem="i5M-Pr-FkT" secondAttribute="centerX" id="4Cl-I4-uL1"/>
                 <constraint firstItem="4MJ-2q-7TV" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="6L1-yY-trG"/>
+                <constraint firstItem="YXR-S9-xy4" firstAttribute="centerY" secondItem="NJ5-kC-Nc2" secondAttribute="centerY" id="9Yn-KQ-lqC"/>
                 <constraint firstItem="dW0-HA-VD3" firstAttribute="top" secondItem="U9K-Qq-ATb" secondAttribute="bottom" constant="16" id="BcS-j1-l67"/>
                 <constraint firstItem="4MJ-2q-7TV" firstAttribute="centerY" secondItem="dW0-HA-VD3" secondAttribute="centerY" id="FuM-zw-S56"/>
                 <constraint firstItem="dW0-HA-VD3" firstAttribute="leading" secondItem="4MJ-2q-7TV" secondAttribute="trailing" constant="8" symbolic="YES" id="Jwy-ol-doG"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="bottom" secondItem="jZL-T5-hUr" secondAttribute="bottom" constant="40" id="K6C-aS-Ye2"/>
+                <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="YXR-S9-xy4" secondAttribute="trailing" constant="20" id="R02-uB-4sc"/>
                 <constraint firstItem="dRB-th-VUS" firstAttribute="top" secondItem="i5M-Pr-FkT" secondAttribute="topMargin" constant="16" id="ZmB-hr-LDP"/>
+                <constraint firstItem="NJ5-kC-Nc2" firstAttribute="leading" secondItem="dW0-HA-VD3" secondAttribute="trailing" constant="8" symbolic="YES" id="ZmU-EQ-OJa"/>
+                <constraint firstItem="YXR-S9-xy4" firstAttribute="leading" secondItem="NJ5-kC-Nc2" secondAttribute="trailing" constant="8" symbolic="YES" id="jeL-7m-teX"/>
                 <constraint firstItem="jZL-T5-hUr" firstAttribute="top" secondItem="dW0-HA-VD3" secondAttribute="bottom" constant="20" id="mHM-ga-SNx"/>
                 <constraint firstItem="fnl-2z-Ty3" firstAttribute="trailing" secondItem="U9K-Qq-ATb" secondAttribute="trailing" constant="16" id="rwT-XG-2Ap"/>
                 <constraint firstItem="U9K-Qq-ATb" firstAttribute="leading" secondItem="fnl-2z-Ty3" secondAttribute="leading" constant="16" id="w9S-gR-BkQ"/>
