@@ -8,6 +8,8 @@
 import UIKit
 
 protocol NoteDisplayLogic: AnyObject {
+    func presentTransferredData(from note: DBNote?)
+    func changeNoteFontSize(_ size: CGFloat)
     func showErrorAlert(errorMessage: UIAlertController.ErrorMessage)
 }
 
@@ -22,7 +24,15 @@ final class NoteViewController: UIViewController {
     
     @IBOutlet weak var titleTextField: UITextField!
     @IBOutlet weak var noteTextView: UITextView!
+    @IBOutlet weak var fontSizeStepper: UIStepper!
     @IBOutlet weak var saveButton: UIButton!
+    
+    // MARK: - Private properties
+    
+    /// Имя текущего  шрифта для заметок
+    /// Используется для возможности установить пользователем другой шрифт заметки
+    /// - по умолчанию применяется шрифт HelveticaNeue
+    private var nameFontNote = "HelveticaNeue"
     
     // MARK: - Life Cycle
     
@@ -30,10 +40,23 @@ final class NoteViewController: UIViewController {
         super.viewDidLoad()
         
         setup()
+        presenter?.presentTransferredData(from: note)
         
     }
     
+    // MARK: - Override Methods
+    
+    override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        view.endEditing(true)
+    }
+    
     // MARK: - IBActions
+    
+    @IBAction func fontSizeStepperPressed(_ sender: UIStepper) {
+        let fontSize = CGFloat(sender.value)
+        
+        presenter?.changeNoteFontSize(fontSize)
+    }
     
     @IBAction func saveButtonPressed() {
         presenter?.save(
@@ -53,7 +76,6 @@ extension NoteViewController {
         view.backgroundColor = .systemGray6
         setupNavigationBar()
         setupUI()
-        setTransferredData()
     }
     
     // MARK: - Setup navigation bar
@@ -73,6 +95,7 @@ extension NoteViewController {
     func setupUI() {
         setupTextFields()
         setupTextViews()
+        setupSteppers()
         setupButtons()
     }
     
@@ -83,9 +106,15 @@ extension NoteViewController {
     }
     
     func setupTextViews() {
-        noteTextView.font = UIFont(name: "HelveticaNeue", size: 17)
+        noteTextView.font = UIFont(name: nameFontNote, size: 17)
         noteTextView.layer.cornerRadius = 10
         noteTextView.clipsToBounds = true
+    }
+    
+    func setupSteppers() {
+        fontSizeStepper.value = 17
+        fontSizeStepper.minimumValue = 10
+        fontSizeStepper.maximumValue = 25
     }
     
     func setupButtons() {
@@ -95,19 +124,19 @@ extension NoteViewController {
         saveButton.backgroundColor = #colorLiteral(red: 0.196842283, green: 0.4615264535, blue: 0.4103206396, alpha: 1)
         saveButton.layer.cornerRadius = 16
     }
-    
-    // MARK: - Display data setting
-    
-    // TODO: (#Fix) Не совсем понимаю, где более правильно писать этот метод. Прямо в классе, или он должен чем-то запускаться из презентера?
-    func setTransferredData() {
-        titleTextField.text = note?.title
-        noteTextView.text = note?.note
-    }
 }
 
 // MARK: - Логика обновления данных View
 
 extension NoteViewController: NoteDisplayLogic {
+    func presentTransferredData(from note: DBNote?) {
+        titleTextField.text = note?.title
+        noteTextView.text = note?.note
+    }
+    
+    func changeNoteFontSize(_ size: CGFloat) {
+        noteTextView.font = UIFont(name: nameFontNote, size: size)
+    }
     
     func showErrorAlert(errorMessage: UIAlertController.ErrorMessage) {
         let alert = UIAlertController
