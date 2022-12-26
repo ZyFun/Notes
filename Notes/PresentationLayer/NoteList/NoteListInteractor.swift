@@ -23,6 +23,8 @@ final class NoteListInteractor {
 extension NoteListInteractor: NoteListBusinessLogic {
     
     func checkIsFirstStartApp() {
+        presenter?.dismissSplashScreen()
+        
         if firstStartAppService?.isFirstStartApp() == true {
             firstStartAppService?.setIsNotFirstStartApp()
             createLearningNote()

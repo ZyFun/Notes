@@ -8,7 +8,11 @@
 import UIKit
 
 protocol NoteListDisplayLogic: AnyObject {
-    
+    /// Метод для скрытия сплешскрина
+    /// - Скрывает сплешскрин по окончанию загрузки всех данных и настройки приложения
+    /// - На данный момент вызывается методом `checkIsFirstStartApp` так как при старте
+    /// никакие данные не загружаются.
+    func dismissSplashScreen()
 }
 
 final class NoteListViewController: UIViewController {
@@ -16,6 +20,7 @@ final class NoteListViewController: UIViewController {
     // MARK: - Public properties
     
     var presenter: NoteListViewControllerOutput?
+    var splashScreenPresenter: ISplashScreenPresenter?
     var dataSourceProvider: INoteListDataSourceProvider?
     var fetchedResultManager: INoteListFetchedResultsManager?
     
@@ -27,6 +32,8 @@ final class NoteListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        splashScreenPresenter?.present()
         
         setup()
         presenter?.checkIsFirstStartApp()
@@ -42,7 +49,6 @@ extension NoteListViewController {
         view.backgroundColor = .systemGray6
         setupNavigationBar()
         setupTableView()
-        setupPlaceholder()
     }
     
     // MARK: - Setup navigation bar
@@ -72,7 +78,6 @@ extension NoteListViewController {
     /// Добавление нового лекарства
     @objc func addNewNote() {
         presenter?.routeToNote(with: nil)
-//        presenter?.updatePlaceholder()
     }
     
     func addSearchController() {
@@ -106,12 +111,6 @@ extension NoteListViewController {
             NoteListCell.self,
             forCellReuseIdentifier: NoteListCell.identifier
         )
-    }
-    
-    // MARK: - Setup placeholders
-    
-    func setupPlaceholder() {
-//        placeholderLabel.textColor = .systemGray
     }
 }
 
@@ -153,5 +152,11 @@ extension NoteListViewController: UISearchBarDelegate {
 // MARK: - Логика обновления данных View
 
 extension NoteListViewController: NoteListDisplayLogic {
-    
+    func dismissSplashScreen() {
+        DispatchQueue.main.asyncAfter(deadline: .now() + 2) {
+            self.splashScreenPresenter?.dismiss { [weak self] in
+                self?.splashScreenPresenter = nil
+            }
+        }
+    }
 }

@@ -8,7 +8,11 @@
 import Foundation
 
 protocol NoteListPresentationLogic: AnyObject {
-    
+    /// Метод для скрытия сплешскрина
+    /// - Скрывает сплешскрин по окончанию загрузки всех данных и настройки приложения
+    /// - На данный момент вызывается методом `checkIsFirstStartApp` так как при старте
+    /// никакие данные не загружаются.
+    func dismissSplashScreen()
 }
 
 protocol NoteListViewControllerOutput {
@@ -51,5 +55,7 @@ extension NoteListPresenter: NoteListViewControllerOutput {
 // MARK: - Presentation Logic
 
 extension NoteListPresenter: NoteListPresentationLogic {
-    
+    func dismissSplashScreen() {
+        view?.dismissSplashScreen()
+    }
 }

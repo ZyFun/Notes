@@ -17,16 +17,6 @@ protocol ICoreDataService {
         keyForSort: String,
         sortAscending: Bool
     ) -> NSFetchedResultsController<NSFetchRequestResult>
-    /// Метод для получения данных из CoreData
-    /// - Parameters:
-    ///   - managedObject: принимает модель CoreData с которой предстоит работать.
-    ///   - context: принимает контекст, в котором производится работа с данными.
-    ///   - completion: возвращает Result или ошибку по завершению чтения данных из базы.
-    func fetch<T: NSManagedObject>(
-        _ managedObject: T.Type,
-        from context: NSManagedObjectContext,
-        completion: (Result<[T], Error>) -> Void
-    )
     func create(_ note: NoteModel, context: NSManagedObjectContext)
     func update(_ currentNote: DBNote, newData: NoteModel, context: NSManagedObjectContext)
     func delete(_ currentObject: NSManagedObject, context: NSManagedObjectContext)
@@ -102,21 +92,6 @@ extension CoreDataService: ICoreDataService {
         dbNote.note = note.note
         
         ConsoleLogger.info("Запуск сохранения \(dbNote.title ?? "no title")")
-    }
-    
-    func fetch<T: NSManagedObject>(
-        _ managedObject: T.Type,
-        from context: NSManagedObjectContext,
-        completion: (Result<[T], Error>) -> Void
-    ) {
-        let fetchRequest = managedObject.fetchRequest()
-
-        do {
-            guard let dbObject = try context.fetch(fetchRequest) as? [T] else { return }
-            completion(.success(dbObject))
-        } catch {
-            completion(.failure(error))
-        }
     }
     
     func update(_ currentNote: DBNote, newData: NoteModel, context: NSManagedObjectContext) {

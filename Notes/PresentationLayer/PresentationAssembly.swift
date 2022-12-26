@@ -21,7 +21,8 @@ final class PresentationAssembly {
     lazy var noteList: NoteListConfigurator = {
         return NoteListConfigurator(
             coreDataService: coreDataService,
-            firstStartAppService: firstStartAppService
+            firstStartAppService: firstStartAppService,
+            splashScreenPresenter: SplashScreenPresenter()
         )
     }()
     

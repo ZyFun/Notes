@@ -12,10 +12,12 @@ final class NoteListConfigurator {
     private let coreDataService: ICoreDataService
     private let fetchedResultManager: INoteListFetchedResultsManager
     private let firstStartAppService: IFirstStartAppService
+    private let splashScreenPresenter: ISplashScreenPresenter
     
     init(
         coreDataService: ICoreDataService,
-        firstStartAppService: IFirstStartAppService
+        firstStartAppService: IFirstStartAppService,
+        splashScreenPresenter: ISplashScreenPresenter
     ) {
         self.coreDataService = coreDataService
         fetchedResultManager = NoteListFetchedResultsManager(
@@ -26,6 +28,7 @@ final class NoteListConfigurator {
             )
         )
         self.firstStartAppService = firstStartAppService
+        self.splashScreenPresenter = splashScreenPresenter
     }
     
     func config(view: UIViewController, navigationController: UINavigationController?) {
@@ -42,6 +45,7 @@ final class NoteListConfigurator {
             resultManager: fetchedResultManager
         )
         
+        view.splashScreenPresenter = splashScreenPresenter
         view.presenter = presenter
         view.dataSourceProvider = dataSourceProvider
         view.fetchedResultManager = fetchedResultManager

@@ -19,6 +19,10 @@
 		2C50379D295396DC00493908 /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 2C50379C295396DC00493908 /* .swiftlint.yml */; };
 		2C69902D2958BCD600946838 /* FontModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69902C2958BCD600946838 /* FontModel.swift */; };
 		2C6990302958DF3E00946838 /* PickerViewDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C69902F2958DF3E00946838 /* PickerViewDataSource.swift */; };
+		2C7B8C5D2959CA55001C3ADB /* SplashScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B8C5B2959CA55001C3ADB /* SplashScreenViewController.swift */; };
+		2C7B8C5E2959CA55001C3ADB /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B8C5C2959CA55001C3ADB /* SplashScreenViewController.xib */; };
+		2C7B8C602959CAF1001C3ADB /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B8C5F2959CAF1001C3ADB /* SplashScreenPresenter.swift */; };
+		2C7B8C622959CB7C001C3ADB /* SplashScreenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B8C612959CB7C001C3ADB /* SplashScreenAnimator.swift */; };
 		2CAD3D00295380030062660B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3CFF295380030062660B /* AppDelegate.swift */; };
 		2CAD3D0A295380030062660B /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D08295380030062660B /* Notes.xcdatamodeld */; };
 		2CAD3D0C295380040062660B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD3D0B295380040062660B /* Assets.xcassets */; };
@@ -55,6 +59,10 @@
 		2C50379C295396DC00493908 /* .swiftlint.yml */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		2C69902C2958BCD600946838 /* FontModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FontModel.swift; sourceTree = "<group>"; };
 		2C69902F2958DF3E00946838 /* PickerViewDataSource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewDataSource.swift; sourceTree = "<group>"; };
+		2C7B8C5B2959CA55001C3ADB /* SplashScreenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenViewController.swift; sourceTree = "<group>"; };
+		2C7B8C5C2959CA55001C3ADB /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
+		2C7B8C5F2959CAF1001C3ADB /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
+		2C7B8C612959CB7C001C3ADB /* SplashScreenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenAnimator.swift; sourceTree = "<group>"; };
 		2CAD3CFC295380030062660B /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD3CFF295380030062660B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAD3D09295380030062660B /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
@@ -136,6 +144,17 @@
 				2C69902F2958DF3E00946838 /* PickerViewDataSource.swift */,
 			);
 			path = Providers;
+			sourceTree = "<group>";
+		};
+		2C7B8C5A2959CA21001C3ADB /* SplashScreen */ = {
+			isa = PBXGroup;
+			children = (
+				2C7B8C5C2959CA55001C3ADB /* SplashScreenViewController.xib */,
+				2C7B8C5B2959CA55001C3ADB /* SplashScreenViewController.swift */,
+				2C7B8C5F2959CAF1001C3ADB /* SplashScreenPresenter.swift */,
+				2C7B8C612959CB7C001C3ADB /* SplashScreenAnimator.swift */,
+			);
+			path = SplashScreen;
 			sourceTree = "<group>";
 		};
 		2CAD3CF3295380020062660B = {
@@ -233,6 +252,7 @@
 			isa = PBXGroup;
 			children = (
 				2CAD64EF29538BD500F70D72 /* PresentationAssembly.swift */,
+				2C7B8C5A2959CA21001C3ADB /* SplashScreen */,
 				2CAD3D18295384050062660B /* NoteList */,
 				2CEEC8C22955AE5D00C8AC4D /* Note */,
 			);
@@ -336,6 +356,7 @@
 				2CAD3D0C295380040062660B /* Assets.xcassets in Resources */,
 				2CEEC8C62955AE8400C8AC4D /* NoteViewController.xib in Resources */,
 				2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */,
+				2C7B8C5E2959CA55001C3ADB /* SplashScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -393,11 +414,13 @@
 				2CAD3D212953854A0062660B /* NoteListPresenter.swift in Sources */,
 				2CAD64F029538BD500F70D72 /* PresentationAssembly.swift in Sources */,
 				2C69902D2958BCD600946838 /* FontModel.swift in Sources */,
+				2C7B8C622959CB7C001C3ADB /* SplashScreenAnimator.swift in Sources */,
 				2C30529A29548DAB00820B3F /* CoreDataService.swift in Sources */,
 				2C3052A62954A5A000820B3F /* NoteListDataSourceProvider.swift in Sources */,
 				2CAD64ED295386BF00F70D72 /* NoteListViewController.swift in Sources */,
 				2C6990302958DF3E00946838 /* PickerViewDataSource.swift in Sources */,
 				2C30529829548D7800820B3F /* ServiceAssembly.swift in Sources */,
+				2C7B8C602959CAF1001C3ADB /* SplashScreenPresenter.swift in Sources */,
 				2CF4DBB829563B6F00B57C4C /* FirstStartAppService.swift in Sources */,
 				2CAD3D28295385EA0062660B /* NoteListConfigurator.swift in Sources */,
 				2CAD3D00295380030062660B /* AppDelegate.swift in Sources */,
@@ -406,6 +429,7 @@
 				2CEEC8CC2955AF1200C8AC4D /* NoteRouter.swift in Sources */,
 				2CAD3D25295385780062660B /* NoteListRouter.swift in Sources */,
 				2CAD3D23295385630062660B /* NoteListInteractor.swift in Sources */,
+				2C7B8C5D2959CA55001C3ADB /* SplashScreenViewController.swift in Sources */,
 				2CF4DBB62956318800B57C4C /* UIAlertController+CustomController.swift in Sources */,
 				2CEEC8CE2955AF2400C8AC4D /* NoteConfigurator.swift in Sources */,
 				2C3052A22954A1CE00820B3F /* NoteListFetchedResultsManager.swift in Sources */,
