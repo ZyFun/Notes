@@ -30,8 +30,6 @@ final class NoteListCell: UITableViewCell {
         let label = UILabel()
         label.font = .systemFont(ofSize: 17)
         label.numberOfLines = 0
-        #warning("Добавить короткое содержание заметки, именно для этого настроен этот параметр")
-        label.setContentCompressionResistancePriority(.defaultLow, for: .vertical)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()

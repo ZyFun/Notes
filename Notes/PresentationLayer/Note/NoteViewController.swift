@@ -51,6 +51,75 @@ final class NoteViewController: UIViewController {
         setup()
         presenter?.presentTransferredData(from: note)
         
+        addFormattedMenu()
+    }
+    
+    // MARK: - Нужно отрефакторить эту часть
+    
+    // TODO: (#Fix) Написано на коленке, нужно подумать над архитектурой кода для форматирования.
+    // Знаю что эти методы уже деприкейтед для iOS 16. Но новые работают как то криво,
+    // либо я просто не разобрался как грамотно написать используя сразу то меню,
+    // которое появляется при выделении текста. А не так что приходится выделить текст,
+    // закрыть меню тапом, долго удержать палец и только тогда откроется нужное меню.
+    func addFormattedMenu() {
+        let boldFormatted = UIMenuItem(title: "Bold", action: #selector(boldTextFormatted))
+        let italicFormatted = UIMenuItem(title: "Italic", action: #selector(italicTextFormatted))
+        let underlineFormatted2 = UIMenuItem(title: "Underline", action: #selector(underlineTextFormatted))
+        
+        UIMenuController.shared.menuItems = [boldFormatted, italicFormatted, underlineFormatted2]
+    }
+    
+    @objc func normalTextFormatted() {
+        let range = noteTextView.selectedRange
+        let string = NSMutableAttributedString(
+            attributedString: noteTextView.attributedText
+        )
+        let normalAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont.systemFont(ofSize: fontNoteSize)
+        ]
+        string.addAttributes(normalAttribute, range: range)
+        noteTextView.attributedText = string
+        noteTextView.selectedRange = range
+    }
+    
+    @objc func boldTextFormatted() {
+        let range = noteTextView.selectedRange
+        let string = NSMutableAttributedString(
+            attributedString: noteTextView.attributedText
+        )
+        let boldAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont.boldSystemFont(ofSize: fontNoteSize)
+        ]
+        string.addAttributes(boldAttribute, range: range)
+        noteTextView.attributedText = string
+        noteTextView.selectedRange = range
+    }
+    
+    @objc func italicTextFormatted() {
+        let range = noteTextView.selectedRange
+        let string = NSMutableAttributedString(
+            attributedString: noteTextView.attributedText
+        )
+        let italicAttribute: [NSAttributedString.Key: Any] = [
+            .font: UIFont.italicSystemFont(ofSize: fontNoteSize)
+        ]
+        string.addAttributes(italicAttribute, range: range)
+        noteTextView.attributedText = string
+        noteTextView.selectedRange = range
+    }
+    
+    @objc func underlineTextFormatted() {
+        let range = noteTextView.selectedRange
+        let string = NSMutableAttributedString(
+            attributedString: noteTextView.attributedText
+        )
+        let underlineAttribute = [
+            NSAttributedString.Key.underlineStyle: NSUnderlineStyle.single.rawValue
+        ]
+        
+        string.addAttributes(underlineAttribute, range: range)
+        noteTextView.attributedText = string
+        noteTextView.selectedRange = range
     }
     
     // MARK: - Override Methods
