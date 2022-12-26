@@ -23,6 +23,9 @@
 		2C7B8C5E2959CA55001C3ADB /* SplashScreenViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B8C5C2959CA55001C3ADB /* SplashScreenViewController.xib */; };
 		2C7B8C602959CAF1001C3ADB /* SplashScreenPresenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B8C5F2959CAF1001C3ADB /* SplashScreenPresenter.swift */; };
 		2C7B8C622959CB7C001C3ADB /* SplashScreenAnimator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2C7B8C612959CB7C001C3ADB /* SplashScreenAnimator.swift */; };
+		2C7B8C682959FC60001C3ADB /* Screenshot001.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B8C652959FC60001C3ADB /* Screenshot001.png */; };
+		2C7B8C692959FC60001C3ADB /* Screenshot002.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B8C662959FC60001C3ADB /* Screenshot002.png */; };
+		2C7B8C6A2959FC60001C3ADB /* Screenshot000.png in Resources */ = {isa = PBXBuildFile; fileRef = 2C7B8C672959FC60001C3ADB /* Screenshot000.png */; };
 		2CAD3D00295380030062660B /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3CFF295380030062660B /* AppDelegate.swift */; };
 		2CAD3D0A295380030062660B /* Notes.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 2CAD3D08295380030062660B /* Notes.xcdatamodeld */; };
 		2CAD3D0C295380040062660B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 2CAD3D0B295380040062660B /* Assets.xcassets */; };
@@ -63,6 +66,10 @@
 		2C7B8C5C2959CA55001C3ADB /* SplashScreenViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SplashScreenViewController.xib; sourceTree = "<group>"; };
 		2C7B8C5F2959CAF1001C3ADB /* SplashScreenPresenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenPresenter.swift; sourceTree = "<group>"; };
 		2C7B8C612959CB7C001C3ADB /* SplashScreenAnimator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashScreenAnimator.swift; sourceTree = "<group>"; };
+		2C7B8C632959F628001C3ADB /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
+		2C7B8C652959FC60001C3ADB /* Screenshot001.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot001.png; sourceTree = "<group>"; };
+		2C7B8C662959FC60001C3ADB /* Screenshot002.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot002.png; sourceTree = "<group>"; };
+		2C7B8C672959FC60001C3ADB /* Screenshot000.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Screenshot000.png; sourceTree = "<group>"; };
 		2CAD3CFC295380030062660B /* Notes.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Notes.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		2CAD3CFF295380030062660B /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		2CAD3D09295380030062660B /* Notes.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Notes.xcdatamodel; sourceTree = "<group>"; };
@@ -157,12 +164,24 @@
 			path = SplashScreen;
 			sourceTree = "<group>";
 		};
+		2C7B8C642959FC34001C3ADB /* Screenshots */ = {
+			isa = PBXGroup;
+			children = (
+				2C7B8C672959FC60001C3ADB /* Screenshot000.png */,
+				2C7B8C652959FC60001C3ADB /* Screenshot001.png */,
+				2C7B8C662959FC60001C3ADB /* Screenshot002.png */,
+			);
+			path = Screenshots;
+			sourceTree = "<group>";
+		};
 		2CAD3CF3295380020062660B = {
 			isa = PBXGroup;
 			children = (
+				2C7B8C632959F628001C3ADB /* README.md */,
 				2C50379A2953957D00493908 /* .gitignore */,
 				2C50379C295396DC00493908 /* .swiftlint.yml */,
 				2CAD3CFE295380030062660B /* Notes */,
+				2C7B8C642959FC34001C3ADB /* Screenshots */,
 				2CAD3CFD295380030062660B /* Products */,
 				317CDB5C23C009F4F9C56D01 /* Pods */,
 				ADEB8A2CBF2C3303BF3AD5D8 /* Frameworks */,
@@ -353,9 +372,12 @@
 				2C50379D295396DC00493908 /* .swiftlint.yml in Resources */,
 				2C50379B2953957D00493908 /* .gitignore in Resources */,
 				2CAD3D0F295380040062660B /* LaunchScreen.storyboard in Resources */,
+				2C7B8C692959FC60001C3ADB /* Screenshot002.png in Resources */,
+				2C7B8C682959FC60001C3ADB /* Screenshot001.png in Resources */,
 				2CAD3D0C295380040062660B /* Assets.xcassets in Resources */,
 				2CEEC8C62955AE8400C8AC4D /* NoteViewController.xib in Resources */,
 				2CAD64EE295386BF00F70D72 /* NoteListViewController.xib in Resources */,
+				2C7B8C6A2959FC60001C3ADB /* Screenshot000.png in Resources */,
 				2C7B8C5E2959CA55001C3ADB /* SplashScreenViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
